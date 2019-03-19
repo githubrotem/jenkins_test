@@ -20,7 +20,7 @@ public class HelloWorld {
 
     public static void main(String[] args) {
         // Prints "Now Its 11:14:56");
-        System.out.println("Now Its 13:22");
+        System.out.println("Now Its 13:25");
         System.out.println("Rotem is the man!!!");
     }
 
