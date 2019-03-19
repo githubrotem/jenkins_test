@@ -1,0 +1,25 @@
+Started by user Rotem Maayan
+Building in workspace /opt/bitnami/apps/jenkins/jenkins_home/workspace/HelloWorld
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] Done
+[HelloWorld] $ /bin/sh -xe /opt/bitnami/apache-tomcat/temp/jenkins6574086520084080602.sh
++ cd /build
++ rm -rf HelloWorld.java
++ /usr/bin/wget https://introcs.cs.princeton.edu/java/11hello/HelloWorld.java
+--2019-03-18 10:45:33--  https://introcs.cs.princeton.edu/java/11hello/HelloWorld.java
+Resolving introcs.cs.princeton.edu (introcs.cs.princeton.edu)... 128.112.136.51
+Connecting to introcs.cs.princeton.edu (introcs.cs.princeton.edu)|128.112.136.51|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 980 [text/plain]
+Saving to: ‘HelloWorld.java’
+
+     0K                                                       100% 34.0M=0s
+
+2019-03-18 10:45:33 (34.0 MB/s) - ‘HelloWorld.java’ saved [980/980]
+
++ date +%H:%M:%S
++ sed -i s/Hello, World/Now Its 10:45:33/ /build/HelloWorld.java
++ /opt/bitnami/java/bin/javac HelloWorld.java
++ /opt/bitnami/java/bin/java HelloWorld
+Now Its 10:45:33
