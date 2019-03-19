@@ -1,0 +1,143 @@
+digraph {
+        compound = "true"
+        newrank = "true"
+        subgraph "root" {
+                "[root] module.gcp-http-lb-prod.google_compute_backend_service.default" [label = "module.gcp-http-lb-prod.google_compute_backend_service.default", shape = "box"]
+                "[root] module.gcp-http-lb-prod.google_compute_firewall.http" [label = "module.gcp-http-lb-prod.google_compute_firewall.http", shape = "box"]
+                "[root] module.gcp-http-lb-prod.google_compute_global_forwarding_rule.http" [label = "module.gcp-http-lb-prod.google_compute_global_forwarding_rule.http", shape = "box"]
+                "[root] module.gcp-http-lb-prod.google_compute_health_check.web-healthcheck" [label = "module.gcp-http-lb-prod.google_compute_health_check.web-healthcheck", shape = "box"]
+                "[root] module.gcp-http-lb-prod.google_compute_target_http_proxy.default" [label = "module.gcp-http-lb-prod.google_compute_target_http_proxy.default", shape = "box"]
+                "[root] module.gcp-http-lb-prod.google_compute_url_map.default" [label = "module.gcp-http-lb-prod.google_compute_url_map.default", shape = "box"]
+                "[root] module.gcp-http-lb-sit.google_compute_backend_service.default" [label = "module.gcp-http-lb-sit.google_compute_backend_service.default", shape = "box"]
+                "[root] module.gcp-http-lb-sit.google_compute_firewall.http" [label = "module.gcp-http-lb-sit.google_compute_firewall.http", shape = "box"]
+                "[root] module.gcp-http-lb-sit.google_compute_global_forwarding_rule.http" [label = "module.gcp-http-lb-sit.google_compute_global_forwarding_rule.http", shape = "box"]
+                "[root] module.gcp-http-lb-sit.google_compute_health_check.web-healthcheck" [label = "module.gcp-http-lb-sit.google_compute_health_check.web-healthcheck", shape = "box"]
+                "[root] module.gcp-http-lb-sit.google_compute_target_http_proxy.default" [label = "module.gcp-http-lb-sit.google_compute_target_http_proxy.default", shape = "box"]
+                "[root] module.gcp-http-lb-sit.google_compute_url_map.default" [label = "module.gcp-http-lb-sit.google_compute_url_map.default", shape = "box"]
+                "[root] module.gcp-http-lb-uat.google_compute_backend_service.default" [label = "module.gcp-http-lb-uat.google_compute_backend_service.default", shape = "box"]
+                "[root] module.gcp-http-lb-uat.google_compute_firewall.http" [label = "module.gcp-http-lb-uat.google_compute_firewall.http", shape = "box"]
+                "[root] module.gcp-http-lb-uat.google_compute_global_forwarding_rule.http" [label = "module.gcp-http-lb-uat.google_compute_global_forwarding_rule.http", shape = "box"]
+                "[root] module.gcp-http-lb-uat.google_compute_health_check.web-healthcheck" [label = "module.gcp-http-lb-uat.google_compute_health_check.web-healthcheck", shape = "box"]
+                "[root] module.gcp-http-lb-uat.google_compute_target_http_proxy.default" [label = "module.gcp-http-lb-uat.google_compute_target_http_proxy.default", shape = "box"]
+                "[root] module.gcp-http-lb-uat.google_compute_url_map.default" [label = "module.gcp-http-lb-uat.google_compute_url_map.default", shape = "box"]
+                "[root] module.web-servers-prod.data.template_file.index" [label = "module.web-servers-prod.data.template_file.index", shape = "box"]
+                "[root] module.web-servers-prod.google_compute_instance.web-server" [label = "module.web-servers-prod.google_compute_instance.web-server", shape = "box"]
+                "[root] module.web-servers-prod.google_compute_instance_group.webservers" [label = "module.web-servers-prod.google_compute_instance_group.webservers", shape = "box"]
+                "[root] module.web-servers-sit.data.template_file.index" [label = "module.web-servers-sit.data.template_file.index", shape = "box"]
+                "[root] module.web-servers-sit.google_compute_instance.web-server" [label = "module.web-servers-sit.google_compute_instance.web-server", shape = "box"]
+                "[root] module.web-servers-sit.google_compute_instance_group.webservers" [label = "module.web-servers-sit.google_compute_instance_group.webservers", shape = "box"]
+                "[root] module.web-servers-uat.data.template_file.index" [label = "module.web-servers-uat.data.template_file.index", shape = "box"]
+                "[root] module.web-servers-uat.google_compute_instance.web-server" [label = "module.web-servers-uat.google_compute_instance.web-server", shape = "box"]
+                "[root] module.web-servers-uat.google_compute_instance_group.webservers" [label = "module.web-servers-uat.google_compute_instance_group.webservers", shape = "box"]
+                "[root] provider.google" [label = "provider.google", shape = "diamond"]
+                "[root] provider.template" [label = "provider.template", shape = "diamond"]
+                "[root] meta.count-boundary (count boundary fixup)" -> "[root] module.gcp-http-lb-prod.google_compute_firewall.http"
+                "[root] meta.count-boundary (count boundary fixup)" -> "[root] module.gcp-http-lb-sit.google_compute_firewall.http"
+                "[root] meta.count-boundary (count boundary fixup)" -> "[root] module.gcp-http-lb-uat.google_compute_firewall.http"
+                "[root] meta.count-boundary (count boundary fixup)" -> "[root] output.application_public_ip-prod"
+                "[root] meta.count-boundary (count boundary fixup)" -> "[root] output.application_public_ip-sit"
+                "[root] meta.count-boundary (count boundary fixup)" -> "[root] output.application_public_ip-uat"
+                "[root] meta.count-boundary (count boundary fixup)" -> "[root] output.servers-public_ip-prod"
+                "[root] meta.count-boundary (count boundary fixup)" -> "[root] output.servers-public_ip-sit"
+                "[root] meta.count-boundary (count boundary fixup)" -> "[root] output.servers-public_ip-uat"
+                "[root] module.gcp-http-lb-prod.google_compute_backend_service.default" -> "[root] module.gcp-http-lb-prod.google_compute_health_check.web-healthcheck"
+                "[root] module.gcp-http-lb-prod.google_compute_backend_service.default" -> "[root] module.gcp-http-lb-prod.var.server_group"
+                "[root] module.gcp-http-lb-prod.google_compute_firewall.http" -> "[root] module.gcp-http-lb-prod.var.name_prefix"
+                "[root] module.gcp-http-lb-prod.google_compute_firewall.http" -> "[root] module.gcp-http-lb-prod.var.servers_tags"
+                "[root] module.gcp-http-lb-prod.google_compute_global_forwarding_rule.http" -> "[root] module.gcp-http-lb-prod.google_compute_target_http_proxy.default"
+                "[root] module.gcp-http-lb-prod.google_compute_health_check.web-healthcheck" -> "[root] module.gcp-http-lb-prod.var.name_prefix"
+                "[root] module.gcp-http-lb-prod.google_compute_health_check.web-healthcheck" -> "[root] provider.google"
+                "[root] module.gcp-http-lb-prod.google_compute_target_http_proxy.default" -> "[root] module.gcp-http-lb-prod.google_compute_url_map.default"
+                "[root] module.gcp-http-lb-prod.google_compute_url_map.default" -> "[root] module.gcp-http-lb-prod.google_compute_backend_service.default"
+                "[root] module.gcp-http-lb-prod.output.application_public_ip" -> "[root] module.gcp-http-lb-prod.google_compute_global_forwarding_rule.http"
+                "[root] module.gcp-http-lb-prod.var.name_prefix" -> "[root] var.name_prefix"
+                "[root] module.gcp-http-lb-prod.var.server_group" -> "[root] module.web-servers-prod.output.server_group_out"
+                "[root] module.gcp-http-lb-prod.var.servers_tags" -> "[root] module.web-servers-prod.output.server_tags_out"
+                "[root] module.gcp-http-lb-sit.google_compute_backend_service.default" -> "[root] module.gcp-http-lb-sit.google_compute_health_check.web-healthcheck"
+                "[root] module.gcp-http-lb-sit.google_compute_backend_service.default" -> "[root] module.gcp-http-lb-sit.var.server_group"
+                "[root] module.gcp-http-lb-sit.google_compute_firewall.http" -> "[root] module.gcp-http-lb-sit.var.name_prefix"
+                "[root] module.gcp-http-lb-sit.google_compute_firewall.http" -> "[root] module.gcp-http-lb-sit.var.servers_tags"
+                "[root] module.gcp-http-lb-sit.google_compute_global_forwarding_rule.http" -> "[root] module.gcp-http-lb-sit.google_compute_target_http_proxy.default"
+                "[root] module.gcp-http-lb-sit.google_compute_health_check.web-healthcheck" -> "[root] module.gcp-http-lb-sit.var.name_prefix"
+                "[root] module.gcp-http-lb-sit.google_compute_health_check.web-healthcheck" -> "[root] provider.google"
+                "[root] module.gcp-http-lb-sit.google_compute_target_http_proxy.default" -> "[root] module.gcp-http-lb-sit.google_compute_url_map.default"
+                "[root] module.gcp-http-lb-sit.google_compute_url_map.default" -> "[root] module.gcp-http-lb-sit.google_compute_backend_service.default"
+                "[root] module.gcp-http-lb-sit.output.application_public_ip" -> "[root] module.gcp-http-lb-sit.google_compute_global_forwarding_rule.http"
+                "[root] module.gcp-http-lb-sit.var.name_prefix" -> "[root] var.name_prefix"
+                "[root] module.gcp-http-lb-sit.var.server_group" -> "[root] module.web-servers-sit.output.server_group_out"
+                "[root] module.gcp-http-lb-sit.var.servers_tags" -> "[root] module.web-servers-sit.output.server_tags_out"
+                "[root] module.gcp-http-lb-uat.google_compute_backend_service.default" -> "[root] module.gcp-http-lb-uat.google_compute_health_check.web-healthcheck"
+                "[root] module.gcp-http-lb-uat.google_compute_backend_service.default" -> "[root] module.gcp-http-lb-uat.var.server_group"
+                "[root] module.gcp-http-lb-uat.google_compute_firewall.http" -> "[root] module.gcp-http-lb-uat.var.name_prefix"
+                "[root] module.gcp-http-lb-uat.google_compute_firewall.http" -> "[root] module.gcp-http-lb-uat.var.servers_tags"
+                "[root] module.gcp-http-lb-uat.google_compute_global_forwarding_rule.http" -> "[root] module.gcp-http-lb-uat.google_compute_target_http_proxy.default"
+                "[root] module.gcp-http-lb-uat.google_compute_health_check.web-healthcheck" -> "[root] module.gcp-http-lb-uat.var.name_prefix"
+                "[root] module.gcp-http-lb-uat.google_compute_health_check.web-healthcheck" -> "[root] provider.google"
+                "[root] module.gcp-http-lb-uat.google_compute_target_http_proxy.default" -> "[root] module.gcp-http-lb-uat.google_compute_url_map.default"
+                "[root] module.gcp-http-lb-uat.google_compute_url_map.default" -> "[root] module.gcp-http-lb-uat.google_compute_backend_service.default"
+                "[root] module.gcp-http-lb-uat.output.application_public_ip" -> "[root] module.gcp-http-lb-uat.google_compute_global_forwarding_rule.http"
+                "[root] module.gcp-http-lb-uat.var.name_prefix" -> "[root] var.name_prefix"
+                "[root] module.gcp-http-lb-uat.var.server_group" -> "[root] module.web-servers-uat.output.server_group_out"
+                "[root] module.gcp-http-lb-uat.var.servers_tags" -> "[root] module.web-servers-uat.output.server_tags_out"
+                "[root] module.web-servers-prod.data.template_file.index" -> "[root] module.web-servers-prod.var.instance_count"
+                "[root] module.web-servers-prod.data.template_file.index" -> "[root] module.web-servers-prod.var.name_prefix"
+                "[root] module.web-servers-prod.data.template_file.index" -> "[root] provider.template"
+                "[root] module.web-servers-prod.google_compute_instance.web-server" -> "[root] module.web-servers-prod.data.template_file.index"
+                "[root] module.web-servers-prod.google_compute_instance.web-server" -> "[root] module.web-servers-prod.var.machine_type"
+                "[root] module.web-servers-prod.google_compute_instance.web-server" -> "[root] provider.google"
+                "[root] module.web-servers-prod.google_compute_instance_group.webservers" -> "[root] module.web-servers-prod.google_compute_instance.web-server"
+                "[root] module.web-servers-prod.output.server_group_out" -> "[root] module.web-servers-prod.google_compute_instance_group.webservers"
+                "[root] module.web-servers-prod.output.server_tags_out" -> "[root] module.web-servers-prod.google_compute_instance.web-server"
+                "[root] module.web-servers-prod.output.servers_public_ip" -> "[root] module.web-servers-prod.google_compute_instance.web-server"
+                "[root] module.web-servers-prod.var.instance_count" -> "[root] var.instance_count"
+                "[root] module.web-servers-prod.var.name_prefix" -> "[root] var.name_prefix"
+                "[root] module.web-servers-sit.data.template_file.index" -> "[root] module.web-servers-sit.var.instance_count"
+                "[root] module.web-servers-sit.data.template_file.index" -> "[root] module.web-servers-sit.var.name_prefix"
+                "[root] module.web-servers-sit.data.template_file.index" -> "[root] provider.template"
+                "[root] module.web-servers-sit.google_compute_instance.web-server" -> "[root] module.web-servers-sit.data.template_file.index"
+                "[root] module.web-servers-sit.google_compute_instance.web-server" -> "[root] module.web-servers-sit.var.machine_type"
+                "[root] module.web-servers-sit.google_compute_instance.web-server" -> "[root] provider.google"
+                "[root] module.web-servers-sit.google_compute_instance_group.webservers" -> "[root] module.web-servers-sit.google_compute_instance.web-server"
+                "[root] module.web-servers-sit.output.server_group_out" -> "[root] module.web-servers-sit.google_compute_instance_group.webservers"
+                "[root] module.web-servers-sit.output.server_tags_out" -> "[root] module.web-servers-sit.google_compute_instance.web-server"
+                "[root] module.web-servers-sit.output.servers_public_ip" -> "[root] module.web-servers-sit.google_compute_instance.web-server"
+                "[root] module.web-servers-sit.var.instance_count" -> "[root] var.instance_count"
+                "[root] module.web-servers-sit.var.name_prefix" -> "[root] var.name_prefix"
+                "[root] module.web-servers-uat.data.template_file.index" -> "[root] module.web-servers-uat.var.instance_count"
+                "[root] module.web-servers-uat.data.template_file.index" -> "[root] module.web-servers-uat.var.name_prefix"
+                "[root] module.web-servers-uat.data.template_file.index" -> "[root] provider.template"
+                "[root] module.web-servers-uat.google_compute_instance.web-server" -> "[root] module.web-servers-uat.data.template_file.index"
+                "[root] module.web-servers-uat.google_compute_instance.web-server" -> "[root] module.web-servers-uat.var.machine_type"
+                "[root] module.web-servers-uat.google_compute_instance.web-server" -> "[root] provider.google"
+                "[root] module.web-servers-uat.google_compute_instance_group.webservers" -> "[root] module.web-servers-uat.google_compute_instance.web-server"
+                "[root] module.web-servers-uat.output.server_group_out" -> "[root] module.web-servers-uat.google_compute_instance_group.webservers"
+                "[root] module.web-servers-uat.output.server_tags_out" -> "[root] module.web-servers-uat.google_compute_instance.web-server"
+                "[root] module.web-servers-uat.output.servers_public_ip" -> "[root] module.web-servers-uat.google_compute_instance.web-server"
+                "[root] module.web-servers-uat.var.instance_count" -> "[root] var.instance_count"
+                "[root] module.web-servers-uat.var.name_prefix" -> "[root] var.name_prefix"
+                "[root] output.application_public_ip-prod" -> "[root] module.gcp-http-lb-prod.output.application_public_ip"
+                "[root] output.application_public_ip-sit" -> "[root] module.gcp-http-lb-sit.output.application_public_ip"
+                "[root] output.application_public_ip-uat" -> "[root] module.gcp-http-lb-uat.output.application_public_ip"
+                "[root] output.servers-public_ip-prod" -> "[root] module.web-servers-prod.output.servers_public_ip"
+                "[root] output.servers-public_ip-sit" -> "[root] module.web-servers-sit.output.servers_public_ip"
+                "[root] output.servers-public_ip-uat" -> "[root] module.web-servers-uat.output.servers_public_ip"
+                "[root] provider.google (close)" -> "[root] module.gcp-http-lb-prod.google_compute_firewall.http"
+                "[root] provider.google (close)" -> "[root] module.gcp-http-lb-prod.google_compute_global_forwarding_rule.http"
+                "[root] provider.google (close)" -> "[root] module.gcp-http-lb-sit.google_compute_firewall.http"
+                "[root] provider.google (close)" -> "[root] module.gcp-http-lb-sit.google_compute_global_forwarding_rule.http"
+                "[root] provider.google (close)" -> "[root] module.gcp-http-lb-uat.google_compute_firewall.http"
+                "[root] provider.google (close)" -> "[root] module.gcp-http-lb-uat.google_compute_global_forwarding_rule.http"
+                "[root] provider.template (close)" -> "[root] module.web-servers-prod.data.template_file.index"
+                "[root] provider.template (close)" -> "[root] module.web-servers-sit.data.template_file.index"
+                "[root] provider.template (close)" -> "[root] module.web-servers-uat.data.template_file.index"
+                "[root] provisioner.file (close)" -> "[root] module.web-servers-prod.google_compute_instance.web-server"
+                "[root] provisioner.file (close)" -> "[root] module.web-servers-sit.google_compute_instance.web-server"
+                "[root] provisioner.file (close)" -> "[root] module.web-servers-uat.google_compute_instance.web-server"
+                "[root] root" -> "[root] meta.count-boundary (count boundary fixup)"
+                "[root] root" -> "[root] provider.google (close)"
+                "[root] root" -> "[root] provider.template (close)"
+                "[root] root" -> "[root] provisioner.file (close)"
+        }
+}
+
+
