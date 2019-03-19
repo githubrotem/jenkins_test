@@ -2,10 +2,10 @@
  *  Compilation:  javac HelloWorld.java
  *  Execution:    java HelloWorld
  *
- *  Prints "Now Its 11:12:51");
+ *  Prints "Now Its 11:14:56");
  *
  *  % java HelloWorld
- *  Now Its 11:12:51");
+ *  Now Its 11:14:56");
  *
  *  These 17 lines of text are comments. They are not part of the program;
  *  they serve to remind us about its properties. The first two lines tell
@@ -19,8 +19,8 @@
 public class HelloWorld {
 
     public static void main(String[] args) {
-        // Prints "Now Its 11:12:51");
-        System.out.println("Now Its 11:12:51");
+        // Prints "Now Its 11:14:56");
+        System.out.println("Now Its 11:14:56");
     }
 
 }
