@@ -20,7 +20,6 @@
       "disk_size": 10,
       "disk_type": "pd-standard",
       "use_internal_ip": "true",
-      "tags": "http-server",
       "ssh_username": "packer"
     }
   ],
