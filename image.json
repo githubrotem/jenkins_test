@@ -1,0 +1,34 @@
+{
+  "variables": {
+    "source_image": "centos-7-v20190312",
+    "machine_type": "n1-standard-1",
+    "region": "us-east1",
+    "zone": "us-east1-c",
+    "project_id": "pp-rotemm"
+  },
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "pp-rotemm",
+      "account_file": "/home/jenkins/packer.gcp.json",
+      "machine_type": "{{user `machine_type`}}",
+      "source_image": "{{user `source_image`}}",
+      "region": "{{user `region`}}",
+      "zone": "{{user `zone`}}",
+      "image_description": "CentOS7 with Apache Installed",
+      "image_name": "{{user `name`}}",
+      "disk_size": 10,
+      "disk_type": "pd-standard",
+      "use_internal_ip": "true",
+      "tags": "http-server",
+      "ssh_username": "packer"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "init.sh",
+      "execute_command": "sudo sh -c '{{ .Vars }} {{ .Path }}'"
+    }
+  ]
+}
