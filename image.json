@@ -27,7 +27,7 @@
     {
       "type": "shell",
       "script": "init.sh",
-      "execute_command": "sudo sh -c '{{ .Vars }} {{ .Path }}'"
+      aa"execute_command": "sudo sh -c '{{ .Vars }} {{ .Path }}'"
     }
   ]
 }
