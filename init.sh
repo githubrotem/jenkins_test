@@ -20,7 +20,7 @@ echo 'cat <<EOF> /var/www/html/index.html
  </head>
  <body>
   <h1>HELLO - This is `hostname`</h1>
-  <h1>I am the MASTER of the universe !!!</h1>
+  <h1>I am SUPERMAN !!!</h1>
  </body>
 </html>
 EOF' >>  /etc/rc.d/rc.local
