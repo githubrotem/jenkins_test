@@ -6,7 +6,7 @@
     "zone": "us-east1-c",
     "project_id": "pp-rotemm"
   },
-  "builders": [
+  "aabuilders": [
     {
       "type": "googlecompute",
       "project_id": "pp-rotemm",
